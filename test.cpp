@@ -2,7 +2,7 @@
  * @Author: LeiJiulong
  * @Date: 2024-12-18 12:27:42
  * @LastEditors: LeiJiulong && lei15557570906@outlook.com
- * @LastEditTime: 2024-12-18 14:02:09
+ * @LastEditTime: 2024-12-18 14:16:28
  * @Description:
  */
 #include "MyList.hpp"
@@ -28,10 +28,9 @@ int main()
         std::cout << "list is empty" << std::endl;
     }
     A a(1);
-    ml.push_back(a);
-    a.i_ = 2;
-    ml.push_back(a);
-    a.i_ = 3;
-    ml.push_back(a);
+    for(int i=0; i< 20; i++, a.i_++)
+    {    
+        ml.push_back(a);
+    }
     return 0;
 }

@@ -2,7 +2,7 @@
  * @Author: LeiJiulong
  * @Date: 2024-12-18 12:06:37
  * @LastEditors: LeiJiulong && lei15557570906@outlook.com
- * @LastEditTime: 2024-12-18 14:11:15
+ * @LastEditTime: 2024-12-18 14:17:55
  * @Description:
  */
 #pragma once
@@ -71,7 +71,7 @@ public:
 
     ~mylist()
     {
-        std::cout << "destroy" << std::endl;
+        std::cout << "mylist destroy" << std::endl;
         clear();
         delete head;
         head = nullptr;
@@ -101,7 +101,6 @@ public:
             newnode->pre = head;
             head->next = newnode;
             head->pre = newnode;
-            std::cout << "first push the ele addr is: " << newnode << std::endl;
         }
         else
         {
@@ -109,8 +108,6 @@ public:
             newnode->pre = head->pre;
             head->pre->next = newnode;
             head->pre = newnode;
-            
-            std::cout << "not fist push, the ele addr is: "<< newnode << std::endl;
         }
     }
 
