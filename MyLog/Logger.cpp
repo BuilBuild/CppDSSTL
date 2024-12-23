@@ -2,10 +2,13 @@
  * @Author: LeiJiulong
  * @Date: 2024-12-23 12:31:11
  * @LastEditors: LeiJiulong && lei15557570906@outlook.com
- * @LastEditTime: 2024-12-23 12:44:49
+ * @LastEditTime: 2024-12-23 18:02:43
  * @Description: 
  */
 #include "Logger.h"
+
+std::once_flag Logger::flag_;
+Logger* Logger::logInstance_ = nullptr;
 
 Logger *Logger::getInstance()
 {
@@ -18,7 +21,7 @@ void Logger::setLogLevel(int level)
     log_level_ = level;
 }
 
-void Logger::log(std::string &msg)
+void Logger::log(std::string msg)
 {
     switch (log_level_)
     {
@@ -37,4 +40,13 @@ void Logger::log(std::string &msg)
     default:
         break;
     }
+}
+
+Logger::Logger()
+{
+}
+
+void Logger::Construct()
+{
+    logInstance_ = new Logger();
 }

@@ -1,21 +1,30 @@
 cmake_minimum_required(VERSION 3.15)
 project(cpp_ds_stl)
 
-set(HEADER_DIRS ${PROJECT_SOURCE_DIR}/MyList)
-list(APPEND HEADER_DIRS 
+# set(HEADER_DIRS ${PROJECT_SOURCE_DIR}/MyList)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -std=c++17 -fPIC")
+add_compile_definitions(LOGDEBUG=1)
+
+set(HEADER_DIRS 
+    ${PROJECT_SOURCE_DIR}/MyList
     ${PROJECT_SOURCE_DIR}/WritePool 
     ${PROJECT_SOURCE_DIR}/TimeS
     ${PROJECT_SOURCE_DIR}/Comm
+    ${PROJECT_SOURCE_DIR}/MyLog
     )
+
+include_directories(${HEADER_DIRS})
 
 set(LIB_DIR_PATH ${PROJECT_SOURCE_DIR}/lib)
 
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 
-set(base_SRCS ${PROJECT_SOURCE_DIR}/TimeS/TimeStamp.cpp)
+set(base_SRCS 
+    ${PROJECT_SOURCE_DIR}/TimeS/TimeStamp.cpp
+    ${PROJECT_SOURCE_DIR}/MyLog/Logger.cpp
+    )
 
 
-include_directories(${HEADER_DIRS})
 
 add_library(dss_base ${base_SRCS})
 

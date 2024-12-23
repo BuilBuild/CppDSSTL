@@ -2,7 +2,7 @@
  * @Author: LeiJiulong
  * @Date: 2024-12-23 12:24:10
  * @LastEditors: LeiJiulong && lei15557570906@outlook.com
- * @LastEditTime: 2024-12-23 12:59:27
+ * @LastEditTime: 2024-12-23 17:50:15
  * @Description: 
  */
 #pragma once
@@ -78,7 +78,7 @@ class Logger : noncopyable
 public:
     static Logger* getInstance();
     void setLogLevel(int level);
-    void log(std::string &msg);
+    void log(std::string msg);
 private:
     Logger();
     static void Construct();
