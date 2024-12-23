@@ -2,7 +2,7 @@
  * @Author: LeiJiulong
  * @Date: 2024-12-23 10:53:45
  * @LastEditors: LeiJiulong && lei15557570906@outlook.com
- * @LastEditTime: 2024-12-23 11:57:24
+ * @LastEditTime: 2024-12-23 12:16:09
  * @Description: 
  */
 #pragma once
@@ -20,5 +20,4 @@ public:
     std::string toFormatString() const;
 private:
     int64_t microSecondsSinceEpoch_;
-    
 };

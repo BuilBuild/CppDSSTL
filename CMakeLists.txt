@@ -2,7 +2,11 @@ cmake_minimum_required(VERSION 3.15)
 project(cpp_ds_stl)
 
 set(HEADER_DIRS ${PROJECT_SOURCE_DIR}/MyList)
-list(APPEND HEADER_DIRS ${PROJECT_SOURCE_DIR}/WritePool ${PROJECT_SOURCE_DIR}/TimeS)
+list(APPEND HEADER_DIRS 
+    ${PROJECT_SOURCE_DIR}/WritePool 
+    ${PROJECT_SOURCE_DIR}/TimeS
+    ${PROJECT_SOURCE_DIR}/Comm
+    )
 
 set(LIB_DIR_PATH ${PROJECT_SOURCE_DIR}/lib)
 
