@@ -2,7 +2,7 @@
  * @Author: LeiJiulong
  * @Date: 2024-12-23 12:31:11
  * @LastEditors: LeiJiulong && lei15557570906@outlook.com
- * @LastEditTime: 2024-12-23 18:02:43
+ * @LastEditTime: 2024-12-23 18:29:05
  * @Description: 
  */
 #include "Logger.h"
@@ -29,13 +29,13 @@ void Logger::log(std::string msg)
         std::cout << "[INFO] [" << TimeStamp::now().toFormatString() << "] " << msg << std::endl;
         break;
     case ERROR:
-        std::cout << "[ERROR] " << TimeStamp::now().toFormatString() << "] " << msg << std::endl;
+        std::cout << "[ERROR] [" << TimeStamp::now().toFormatString() << "] " << msg << std::endl;
         break;
     case FATAL:
-        std::cout << "[FATAL] " << TimeStamp::now().toFormatString() << "] " << msg << std::endl;
+        std::cout << "[FATAL] [" << TimeStamp::now().toFormatString() << "] " << msg << std::endl;
         break;
     case DEBUG:
-        std::cout << "[DEBUG] " << TimeStamp::now().toFormatString() << "] " << msg << std::endl;
+        std::cout << "[DEBUG] [" << TimeStamp::now().toFormatString() << "] " << msg << std::endl;
         break;
     default:
         break;

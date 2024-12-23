@@ -2,7 +2,7 @@
  * @Author: LeiJiulong
  * @Date: 2024-12-23 12:24:10
  * @LastEditors: LeiJiulong && lei15557570906@outlook.com
- * @LastEditTime: 2024-12-23 17:50:15
+ * @LastEditTime: 2024-12-23 18:43:08
  * @Description: 
  */
 #pragma once
@@ -10,6 +10,7 @@
 
 #include "MyTypes.hpp"
 #include "TimeStamp.h"
+#include <errno.h>
 
 /*
 日志级别
@@ -26,7 +27,7 @@
         Logger& logger = *(Logger::getInstance()); \
         logger.setLogLevel(INFO); \
         char buf[1024] = {0}; \
-        snprintf(buf, 1024, LogmsgFormat, ##__VA_ARGS__); \
+        snprintf(buf, 1024, "[%s %d] " LogmsgFormat, __FUNCTION__, __LINE__, ##__VA_ARGS__); \
         logger.log(buf); \
     } while(0)
 
@@ -36,7 +37,7 @@
         Logger& logger = *(Logger::getInstance()); \
         logger.setLogLevel(ERROR); \
         char buf[1024] = {0}; \
-        snprintf(buf, 1024, LogmsgFormat, ##__VA_ARGS__); \
+        snprintf(buf, 1024, "[%s %d] " LogmsgFormat, __FUNCTION__, __LINE__, ##__VA_ARGS__); \
         logger.log(buf); \
     } while(0)
 
@@ -47,7 +48,7 @@
         Logger& logger = *(Logger::getInstance()); \
         logger.setLogLevel(DEBUG); \
         char buf[1024] = {0}; \
-        snprintf(buf, 1024, LogmsgFormat, ##__VA_ARGS__); \
+        snprintf(buf, 1024, "[%s %d] " LogmsgFormat, __FUNCTION__, __LINE__, ##__VA_ARGS__); \
         logger.log(buf); \
     } while(0)
 #else
@@ -60,10 +61,10 @@
         Logger& logger = *(Logger::getInstance()); \
         logger.setLogLevel(FATAL); \
         char buf[1024] = {0}; \
-        snprintf(buf, 1024, LogmsgFormat, ##__VA_ARGS__); \
+        snprintf(buf, 1024, "[%s %d] " LogmsgFormat, __FUNCTION__, __LINE__, ##__VA_ARGS__); \
         logger.log(buf); \
+        exit(errno); \
     } while(0)
-
 
 enum LogLevel
 {
