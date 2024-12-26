@@ -2,7 +2,7 @@
  * @Author: LeiJiulong
  * @Date: 2024-12-23 12:24:10
  * @LastEditors: LeiJiulong && lei15557570906@outlook.com
- * @LastEditTime: 2024-12-23 18:55:22
+ * @LastEditTime: 2024-12-26 12:26:03
  * @Description: 
  */
 #pragma once
@@ -26,6 +26,16 @@
     { \
         Logger& logger = *(Logger::getInstance()); \
         logger.setLogLevel(INFO); \
+        char buf[1024] = {0}; \
+        snprintf(buf, 1024, "[%s %d] " LogmsgFormat, __FUNCTION__, __LINE__, ##__VA_ARGS__); \
+        logger.log(buf); \
+    } while(0)
+
+#define LOG_WARRING(LogmsgFormat, ...) \
+    do \
+    { \
+        Logger& logger = *(Logger::getInstance()); \
+        logger.setLogLevel(WARRING); \
         char buf[1024] = {0}; \
         snprintf(buf, 1024, "[%s %d] " LogmsgFormat, __FUNCTION__, __LINE__, ##__VA_ARGS__); \
         logger.log(buf); \
@@ -69,9 +79,10 @@
 enum LogLevel
 {
     INFO,   // 普通信息
+    WARRING, // 警告信息
     ERROR,  // 错误信息
     FATAL,  // core dump
-    DEBUG   // 调试信息
+    DEBUG,   // 调试信息
 };
 
 class Logger : noncopyable

@@ -2,7 +2,7 @@
  * @Author: LeiJiulong
  * @Date: 2024-12-23 12:31:11
  * @LastEditors: LeiJiulong && lei15557570906@outlook.com
- * @LastEditTime: 2024-12-23 18:29:05
+ * @LastEditTime: 2024-12-26 12:26:34
  * @Description: 
  */
 #include "Logger.h"
@@ -27,6 +27,9 @@ void Logger::log(std::string msg)
     {
     case INFO:
         std::cout << "[INFO] [" << TimeStamp::now().toFormatString() << "] " << msg << std::endl;
+        break;
+    case WARRING:
+        std::cout << "[WARRING] [" << TimeStamp::now().toFormatString() << "] " << msg << std::endl;
         break;
     case ERROR:
         std::cout << "[ERROR] [" << TimeStamp::now().toFormatString() << "] " << msg << std::endl;
