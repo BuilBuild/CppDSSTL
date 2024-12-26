@@ -2,7 +2,7 @@
  * @Author: LeiJiulong
  * @Date: 2024-12-25 16:26:12
  * @LastEditors: LeiJiulong && lei15557570906@outlook.com
- * @LastEditTime: 2024-12-26 13:07:49
+ * @LastEditTime: 2024-12-26 19:02:03
  * @Description:
  */
 #pragma once
@@ -29,10 +29,10 @@ public:
     void handleEvent(TimeStamp receiveTime);
 
     // 设置回调
-    void setReadCallback(ReadEventCallback &cb) {readCallback_ = std::move(cb);}
-    void setWriteCallback(EventCallback &cb) {writeCallback_ = std::move(cb);}
-    void setCloseCallback(EventCallback &cb) {closeCallback_ = std::move(cb);}
-    void setErrorCallback(EventCallback &cb) {errorCallback_ = std::move(cb);}
+    void setReadCallback(ReadEventCallback cb) {readCallback_ = std::move(cb);}
+    void setWriteCallback(EventCallback cb) {writeCallback_ = std::move(cb);}
+    void setCloseCallback(EventCallback cb) {closeCallback_ = std::move(cb);}
+    void setErrorCallback(EventCallback cb) {errorCallback_ = std::move(cb);}
 
     // 防止channel被手动remove调，channel还在执行回调操作
     void tie(const std::shared_ptr<void>&);

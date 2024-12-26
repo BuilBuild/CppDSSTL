@@ -2,7 +2,7 @@
  * @Author: LeiJiulong
  * @Date: 2024-12-26 13:10:40
  * @LastEditors: LeiJiulong && lei15557570906@outlook.com
- * @LastEditTime: 2024-12-26 14:46:54
+ * @LastEditTime: 2024-12-26 14:13:30
  * @Description: 
  */
 #pragma once
@@ -13,7 +13,7 @@
 #include <vector>
 #include <sys/epoll.h>
 
-class EpollPoller : Poller
+class EpollPoller : public Poller
 {
 public:
     EpollPoller(EventLoop* loop);
