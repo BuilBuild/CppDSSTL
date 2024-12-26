@@ -2,7 +2,7 @@
  * @Author: LeiJiulong
  * @Date: 2024-12-26 17:38:52
  * @LastEditors: LeiJiulong && lei15557570906@outlook.com
- * @LastEditTime: 2024-12-26 20:01:52
+ * @LastEditTime: 2024-12-26 20:57:55
  * @Description: 
  */
 #include "EventLoop.h"
@@ -32,7 +32,7 @@ const int kPollTimeMs = 10000;
 int createEventfd()
 {
     int evtfd = ::eventfd(0, EFD_NONBLOCK | EFD_CLOEXEC);
-    if (eventfd < 0)
+    if (evtfd < 0)
     {
         LOG_FATAL("eventfd create failed,errno is %d", errno);
     }
@@ -162,7 +162,7 @@ void EventLoop::handleRead()
     ssize_t n =  read(wakeupFd_, &one, sizeof one);
     if(n != sizeof one)
     {
-        LOG_ERROR("EventLoop::handleRead() reads %d bytes instead of 8", n);
+        LOG_ERROR("EventLoop::handleRead() reads %lu bytes instead of 8", n);
     }
 }
 
