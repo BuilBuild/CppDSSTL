@@ -2,7 +2,7 @@
  * @Author: LeiJiulong
  * @Date: 2024-12-25 15:39:36
  * @LastEditors: LeiJiulong && lei15557570906@outlook.com
- * @LastEditTime: 2024-12-25 15:46:57
+ * @LastEditTime: 2024-12-26 23:06:10
  * @Description: 封装socket地址类型 
  */
 #pragma once
@@ -22,6 +22,7 @@ public:
     uint16_t toPort() const;
 
     const sockaddr_in * getSockAddr() const {return &addr_;}
+    void setSockAddr(const sockaddr_in &addr) {addr_ = addr;}
 
 private:
     sockaddr_in addr_;
