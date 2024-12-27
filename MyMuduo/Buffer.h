@@ -2,7 +2,7 @@
  * @Author: LeiJiulong
  * @Date: 2024-12-27 13:16:36
  * @LastEditors: LeiJiulong && lei15557570906@outlook.com
- * @LastEditTime: 2024-12-27 16:46:50
+ * @LastEditTime: 2024-12-27 19:15:37
  * @Description: 
  */
 #pragma once
@@ -106,6 +106,9 @@ public:
      * @return ssize_t 
      */
     ssize_t readFd(int fd, int* saveErrno);
+
+    //通过fd发送数据
+    ssize_t writeFd(int fd, int *saveErrno);
 
 private:
     char* begin() {return &*buffer_.begin();}

@@ -2,13 +2,14 @@
  * @Author: LeiJiulong
  * @Date: 2024-12-27 16:40:02
  * @LastEditors: LeiJiulong && lei15557570906@outlook.com
- * @LastEditTime: 2024-12-27 17:06:54
+ * @LastEditTime: 2024-12-27 19:18:56
  * @Description: 
  */
 #include "Buffer.h"
 
 #include <errno.h>
 #include <sys/uio.h>
+#include <unistd.h>
 
 ssize_t Buffer::readFd(int fd, int *saveErrno)
 {
@@ -41,4 +42,14 @@ ssize_t Buffer::readFd(int fd, int *saveErrno)
     }
 
     return n;
+}
+
+ssize_t Buffer::writeFd(int fd, int *saveErrno)
+{
+   ssize_t n = ::write(fd, peek(), readableBytes());
+   if(n <= 0)
+   {
+    *saveErrno = errno;
+   }
+   return n;
 }

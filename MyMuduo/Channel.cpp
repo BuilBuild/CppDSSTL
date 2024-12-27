@@ -2,7 +2,7 @@
  * @Author: LeiJiulong
  * @Date: 2024-12-26 11:29:48
  * @LastEditors: LeiJiulong && lei15557570906@outlook.com
- * @LastEditTime: 2024-12-26 12:23:44
+ * @LastEditTime: 2024-12-27 20:41:37
  * @Description: 
  */
 #include "Channel.h"
@@ -57,14 +57,14 @@ void Channel::remove()
 {
     // 通过所属的eventloop,调用pooler相应方法，删除对应的channel
     // add code ...
-    // loop_ -> removeChannel(this) 
+    loop_ -> removeChannel(this); 
 }
 
 void Channel::update()
 {
-    // 通过所属的eventloop,调用pooler相应泛泛，注册fd的events事件
+    // 通过所属的eventloop,调用pooler相应方法，注册fd的events事件
     // add code ...
-    // loop_->updateChannel(this);
+    loop_->updateChannel(this);
 }
 
 void Channel::handleEventWithGuard(TimeStamp receiveTime)
