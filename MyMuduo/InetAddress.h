@@ -2,7 +2,7 @@
  * @Author: LeiJiulong
  * @Date: 2024-12-25 15:39:36
  * @LastEditors: LeiJiulong && lei15557570906@outlook.com
- * @LastEditTime: 2024-12-26 23:06:10
+ * @LastEditTime: 2024-12-27 13:03:45
  * @Description: 封装socket地址类型 
  */
 #pragma once
@@ -14,7 +14,7 @@
 class InetAddress
 {
 public:
-    explicit InetAddress(uint16_t port, std::string ip = "127.0.0.1");
+    explicit InetAddress(uint16_t port = 0, std::string ip = "127.0.0.1");
     explicit InetAddress(const sockaddr_in &addr):addr_(addr){}
 
     std::string toIp() const;
