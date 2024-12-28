@@ -2,7 +2,7 @@
  * @Author: LeiJiulong
  * @Date: 2024-12-27 13:15:04
  * @LastEditors: LeiJiulong && lei15557570906@outlook.com
- * @LastEditTime: 2024-12-27 20:43:43
+ * @LastEditTime: 2024-12-28 13:21:13
  * @Description: 
  */
 #pragma once
@@ -53,6 +53,7 @@ public:
     void setMessageCallback(const MessageCallback &cb) {messageCallback_ = cb;}
     void setWriteCompleteCallback(const WriteCompleteCallback &cb) {writeCompleteCallback_ = cb;}
     void setHighWaterMarkCallback(const HighWaterMarkCallback &cb) {highWaterMarkCallback_ = cb;} 
+    void setCloseCallback(const CloseCallback &cb) {closeCallback_=cb;}
     
     /**
      * @brief 连接建立 

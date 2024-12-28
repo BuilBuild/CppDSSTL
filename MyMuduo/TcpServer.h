@@ -2,7 +2,7 @@
  * @Author: LeiJiulong
  * @Date: 2024-12-25 16:23:23
  * @LastEditors: LeiJiulong && lei15557570906@outlook.com
- * @LastEditTime: 2024-12-27 14:30:49
+ * @LastEditTime: 2024-12-28 12:49:29
  * @Description: 
  */
 #pragma once
@@ -48,7 +48,14 @@ public:
     void start();
 
 private:
+    /**
+     * @brief 有一个新的连接过来，acceptor会执行这个回调工作
+     * 
+     * @param sockfd 
+     * @param peerAddr 
+     */
     void newConnection(int sockfd, const InetAddress &peerAddr);
+
     void removeConnection(const TcpConnectionPtr &conn);
     void removeConnectionInLoop(const TcpConnectionPtr &conn);
 
