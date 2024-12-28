@@ -2,7 +2,7 @@
  * @Author: LeiJiulong
  * @Date: 2024-12-26 15:35:15
  * @LastEditors: LeiJiulong && lei15557570906@outlook.com
- * @LastEditTime: 2024-12-26 15:43:44
+ * @LastEditTime: 2024-12-28 14:23:11
  * @Description: 
  */
 
@@ -25,10 +25,4 @@ namespace CurrentThread
         }
         return t_cachedTid;
     }
-
-
-
-
-
-
 }

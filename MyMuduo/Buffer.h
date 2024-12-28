@@ -2,7 +2,7 @@
  * @Author: LeiJiulong
  * @Date: 2024-12-27 13:16:36
  * @LastEditors: LeiJiulong && lei15557570906@outlook.com
- * @LastEditTime: 2024-12-27 19:15:37
+ * @LastEditTime: 2024-12-28 14:21:27
  * @Description: 
  */
 #pragma once
@@ -21,7 +21,7 @@ public:
     explicit Buffer(size_t initialSize = kInitialSize)
         : buffer_(kCheapPrepend+ initialSize), readerIndex_(kCheapPrepend), writerIndex_(kCheapPrepend)
         {}
-    ~Buffer();
+    ~Buffer(){};
 
     /**
      * @brief 可以读取的数据字节大小 

@@ -2,12 +2,12 @@
  * @Author: LeiJiulong
  * @Date: 2024-12-26 15:36:58
  * @LastEditors: LeiJiulong && lei15557570906@outlook.com
- * @LastEditTime: 2024-12-26 15:43:00
+ * @LastEditTime: 2024-12-28 14:23:21
  * @Description: 
  */
 #include "CurrentThread.h"
 
-namespace CUrrentThread
+namespace CurrentThread
 {
     __thread int t_cachedTid = 0;
 
@@ -20,3 +20,4 @@ namespace CUrrentThread
         }
     }
 }
+

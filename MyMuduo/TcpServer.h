@@ -2,7 +2,7 @@
  * @Author: LeiJiulong
  * @Date: 2024-12-25 16:23:23
  * @LastEditors: LeiJiulong && lei15557570906@outlook.com
- * @LastEditTime: 2024-12-28 12:49:29
+ * @LastEditTime: 2024-12-28 14:10:26
  * @Description: 
  */
 #pragma once
@@ -13,6 +13,9 @@
 #include "MyTypes.hpp"
 #include "EventLoopThreadPool.h"
 #include "Callbacks.h"
+#include "TcpConnection.h"
+#include "Buffer.h"
+#include "TimeStamp.h"
 
 #include <functional>
 #include <string>

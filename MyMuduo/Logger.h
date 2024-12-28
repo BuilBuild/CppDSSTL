@@ -2,7 +2,7 @@
  * @Author: LeiJiulong
  * @Date: 2024-12-23 12:24:10
  * @LastEditors: LeiJiulong && lei15557570906@outlook.com
- * @LastEditTime: 2024-12-26 12:26:03
+ * @LastEditTime: 2024-12-28 14:31:31
  * @Description: 
  */
 #pragma once
@@ -27,7 +27,7 @@
         Logger& logger = *(Logger::getInstance()); \
         logger.setLogLevel(INFO); \
         char buf[1024] = {0}; \
-        snprintf(buf, 1024, "[%s %d] " LogmsgFormat, __FUNCTION__, __LINE__, ##__VA_ARGS__); \
+        snprintf(buf, 1024, "[%s - %s - %d] " LogmsgFormat, __FILE__, __FUNCTION__, __LINE__, ##__VA_ARGS__); \
         logger.log(buf); \
     } while(0)
 
