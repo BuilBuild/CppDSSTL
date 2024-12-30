@@ -12,3 +12,5 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 add_executable(test_muduo_server test_muduo_server.cpp)
 
 # target_link_libraries(test_muduo_server muduo_base)
+
+add_executable(nolhman_json_test nolhman_json_test.cpp)
