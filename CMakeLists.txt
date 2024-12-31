@@ -39,3 +39,6 @@ set(EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_SOURCE_DIR}/bin)
 add_subdirectory(Test)
 add_executable(test test.cpp)
 add_executable(single_write_test SingleWritePoolTest.cpp)
+
+add_executable(muduo_server ${CMAKE_CURRENT_SOURCE_DIR}/MuduoServer/muduo_server.cpp)
+target_link_libraries(muduo_server muduo_base)
