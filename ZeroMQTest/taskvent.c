@@ -2,7 +2,7 @@
  * @Author: LeiJiulong
  * @Date: 2025-01-08 18:04:54
  * @LastEditors: LeiJiulong && lei15557570906@outlook.com
- * @LastEditTime: 2025-01-08 19:04:34
+ * @LastEditTime: 2025-01-08 19:18:45
  * @Description: 
  */
 
@@ -27,7 +27,7 @@ int main()
     printf("Press Enter when the new workers are ready:\n");
 
     // 第一个消息是 0
-    s_send(sink, "0", 1,0);
+    s_send(sink, "0");
 
     // 初始化随机数发生器
     srandom((unsigned) time (NULL));
@@ -42,7 +42,7 @@ int main()
         total_msec += workload;
         char string[10] = {0};
         sprintf(string, "%hu", workload);
-        s_send(sender,string, 10, 0);
+        s_send(sender,string);
     }
 
     printf("Total expected cost: %d msec\n", total_msec);
