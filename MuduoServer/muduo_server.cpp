@@ -2,7 +2,7 @@
  * @Author: LeiJiulong
  * @Date: 2024-12-31 15:54:09
  * @LastEditors: LeiJiulong && lei15557570906@outlook.com
- * @LastEditTime: 2024-12-31 16:21:52
+ * @LastEditTime: 2024-12-31 16:31:29
  * @Description: 
  */
 #include <muduo/net/TcpServer.h>
@@ -53,6 +53,7 @@ private:
         else
         {
             cout << conn->peerAddress().toIpPort() << " failed!" << endl;
+            conn->shutdown();
         }
     }
     // 专门处理用户的读写事件
@@ -61,6 +62,7 @@ private:
         string buf = buff->retrieveAllAsString();
         cout <<"received ("<< conn->peerAddress().toIpPort() << ") message: " << buf << endl;
         conn->send("hello "+ buf);
+        conn->shutdown();
     }
 
 private:

@@ -37,8 +37,13 @@ add_library(muduo_base ${muduo_SRC})
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_SOURCE_DIR}/bin)
 
 add_subdirectory(Test)
+add_subdirectory(ZeroMQTest)
 add_executable(test test.cpp)
 add_executable(single_write_test SingleWritePoolTest.cpp)
 
-add_executable(muduo_server ${CMAKE_CURRENT_SOURCE_DIR}/MuduoServer/muduo_server.cpp)
-target_link_libraries(muduo_server muduo_base)
+
+
+# add_executable(muduo_server ${CMAKE_CURRENT_SOURCE_DIR}/MuduoServer/muduo_server.cpp)
+# target_link_libraries(muduo_server muduo_base)
+# g++ muduo_server.cpp -lmuduo_net -lmuduo_base -lpthread -std=c++11
+# g++ muduo_server.cpp -lmuduo_base -lmuduo_net -lpthread -std=c++11
