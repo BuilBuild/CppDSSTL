@@ -2,7 +2,7 @@
  * @Author: LeiJiulong
  * @Date: 2025-01-08 18:04:54
  * @LastEditors: LeiJiulong && lei15557570906@outlook.com
- * @LastEditTime: 2025-01-08 19:18:45
+ * @LastEditTime: 2025-01-08 20:32:51
  * @Description: 
  */
 
@@ -23,6 +23,7 @@ int main()
     zmq_bind(sender, "tcp://*:5557");
     // 用于发送批次开始消息的套接字
     void *sink = zmq_socket(context, ZMQ_PUSH);
+    zmq_connect(sink, "tcp://localhost:5558");
 
     printf("Press Enter when the new workers are ready:\n");
 
