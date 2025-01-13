@@ -41,6 +41,8 @@ add_subdirectory(ZeroMQTest)
 add_executable(test test.cpp)
 add_executable(single_write_test SingleWritePoolTest.cpp)
 
+add_subdirectory(protobuf)
+
 
 
 # add_executable(muduo_server ${CMAKE_CURRENT_SOURCE_DIR}/MuduoServer/muduo_server.cpp)

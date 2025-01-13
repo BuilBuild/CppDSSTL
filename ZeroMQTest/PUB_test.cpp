@@ -2,7 +2,7 @@
  * @Author: LeiJiulong
  * @Date: 2025-01-11 16:16:09
  * @LastEditors: LeiJiulong && lei15557570906@outlook.com
- * @LastEditTime: 2025-01-11 16:49:37
+ * @LastEditTime: 2025-01-11 18:14:50
  * @Description: 
  */
 #include <zmq.hpp>
@@ -16,12 +16,12 @@ int main() {
     zmq::socket_t socket(context, zmq::socket_type::pub);
 
     // 绑定到指定地址
-    socket.bind("tcp://*:5555");
+    socket.bind("tcp://*:5558");
 
     // 发布消息
     int count = 0;
     while (true) {
-        std::string topic = "Topic";
+        std::string topic = "OMS";
         std::string message = "Message " + std::to_string(count);
 
         // 发布主题和消息
