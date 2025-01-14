@@ -2,7 +2,7 @@
  * @Author: LeiJiulong
  * @Date: 2025-01-11 16:16:09
  * @LastEditors: LeiJiulong && lei15557570906@outlook.com
- * @LastEditTime: 2025-01-11 18:14:50
+ * @LastEditTime: 2025-01-14 22:05:56
  * @Description: 
  */
 #include <zmq.hpp>
@@ -33,7 +33,7 @@ int main() {
         memcpy(messageMsg.data(), message.data(), message.size());
         socket.send(messageMsg, zmq::send_flags::none);
 
-        std::cout << "Published: " << topic << " - " << message << std::endl;
+        std::cout << "Published: " << std::string(static_cast<char*>(topic.data()), topic.size()) << " - " << static_cast<char*>(message.data()) << std::endl;
 
         count++;
         sleep(1); // 每秒发布一条消息
