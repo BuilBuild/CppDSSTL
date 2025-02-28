@@ -34,3 +34,5 @@
 bin
 build
 .vscode
+*.pb.h
+*.pb.cc
