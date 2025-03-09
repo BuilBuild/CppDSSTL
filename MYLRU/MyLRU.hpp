@@ -43,15 +43,18 @@ public:
             it->second->second = value;
             return;
         }
-        // 插入新节点
+        // -------------插入新节点---------------
         if(cache.size() == capacity)
         {
+            // 删除最后一个节点
             auto last = cache.back();
             cacheMap.erase(last.first);
             cache.pop_back();
         }
+        // 插入节点
         cache.emplace_front(key, value);
         cacheMap[key] = cache.begin();
+        capacity++;
     }
 
 private:
